@@ -1,0 +1,514 @@
+.vehicle-cost-dashboard-root {
+  --vc-bg: #f5f7fb;
+  --vc-surface: #ffffff;
+  --vc-surface-alt: #f8fafc;
+  --vc-border: rgba(15, 23, 42, 0.08);
+  --vc-muted: #64748b;
+  --vc-text: #0f172a;
+  --vc-navy: #12264d;
+  --vc-blue: #2d6cdf;
+  --vc-blue-soft: rgba(45, 108, 223, 0.12);
+  --vc-success: #0f8a5f;
+  --vc-success-soft: rgba(15, 138, 95, 0.12);
+  --vc-warning: #d97706;
+  --vc-warning-soft: rgba(217, 119, 6, 0.12);
+  --vc-danger: #b42318;
+  --vc-danger-soft: rgba(180, 35, 24, 0.12);
+  --vc-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+  --vc-radius: 18px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--vc-text);
+  background: var(--vc-bg);
+  border-radius: 22px;
+  padding: 22px;
+  box-sizing: border-box;
+}
+
+.vehicle-cost-dashboard-root * {
+  box-sizing: border-box;
+}
+
+.vehicle-cost-dashboard-root .vc-header {
+  background: linear-gradient(135deg, rgba(18, 38, 77, 0.98), rgba(38, 62, 116, 0.96));
+  color: #fff;
+  border-radius: var(--vc-radius);
+  padding: 24px 24px 16px;
+  box-shadow: var(--vc-shadow);
+}
+
+.vehicle-cost-dashboard-root .vc-topbar,
+.vehicle-cost-dashboard-root .vc-filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.vehicle-cost-dashboard-root .vc-topbar {
+  margin-bottom: 16px;
+}
+
+.vehicle-cost-dashboard-root .vc-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vehicle-cost-dashboard-root .vc-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.vehicle-cost-dashboard-root h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.vehicle-cost-dashboard-root .vc-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.vehicle-cost-dashboard-root .vc-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.vehicle-cost-dashboard-root .vc-header-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vehicle-cost-dashboard-root .vc-header-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vc-success);
+  box-shadow: 0 0 0 5px rgba(15, 138, 95, 0.15);
+}
+
+.vehicle-cost-dashboard-root .vc-filter-row {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.vehicle-cost-dashboard-root .vc-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.vehicle-cost-dashboard-root .vc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 130px;
+}
+
+.vehicle-cost-dashboard-root .vc-field label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.vehicle-cost-dashboard-root .vc-field select,
+.vehicle-cost-dashboard-root .vc-field input,
+.vehicle-cost-dashboard-root .vc-table-search {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 10px;
+  height: 38px;
+  padding: 0 12px;
+  font-size: 0.86rem;
+}
+
+.vehicle-cost-dashboard-root .vc-field input::placeholder,
+.vehicle-cost-dashboard-root .vc-field select option {
+  color: #dfe7f6;
+}
+
+.vehicle-cost-dashboard-root .vc-action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.vehicle-cost-dashboard-root .vc-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.vehicle-cost-dashboard-root .vc-btn-primary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--vc-text);
+  background: #fff;
+}
+
+.vehicle-cost-dashboard-root .vc-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.vehicle-cost-dashboard-root .vc-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-card {
+  background: var(--vc-surface);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  padding: 18px 18px 16px;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto auto -10%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--vc-blue-soft);
+  pointer-events: none;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--vc-blue-soft);
+  color: var(--vc-blue);
+  font-size: 1.2rem;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-value {
+  margin: 0;
+  font-size: clamp(1.6rem, 1.9vw, 2.2rem);
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: var(--vc-navy);
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-label {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.84rem;
+  color: var(--vc-muted);
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-note {
+  font-size: 0.74rem;
+  color: var(--vc-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-note .pill {
+  border-radius: 999px;
+  padding: 5px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--vc-success-soft);
+  color: var(--vc-success);
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-note.warning .pill {
+  background: var(--vc-warning-soft);
+  color: var(--vc-warning);
+}
+
+.vehicle-cost-dashboard-root .vc-kpi-note.alert .pill {
+  background: var(--vc-danger-soft);
+  color: var(--vc-danger);
+}
+
+.vehicle-cost-dashboard-root .vc-grid-two {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.vehicle-cost-dashboard-root .vc-card {
+  background: var(--vc-surface);
+  border: 1px solid var(--vc-border);
+  border-radius: var(--vc-radius);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.02);
+  overflow: hidden;
+}
+
+.vehicle-cost-dashboard-root .vc-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.vehicle-cost-dashboard-root .vc-card-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--vc-navy);
+}
+
+.vehicle-cost-dashboard-root .vc-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--vc-muted);
+}
+
+.vehicle-cost-dashboard-root .vc-chart-wrap {
+  padding: 16px 18px 18px;
+}
+
+.vehicle-cost-dashboard-root .vc-chart-wrap canvas {
+  max-height: 300px;
+  width: 100%;
+}
+
+.vehicle-cost-dashboard-root .vc-summary-list {
+  padding: 10px 18px 18px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vehicle-cost-dashboard-root .vc-summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--vc-border);
+  background: var(--vc-surface-alt);
+  border-radius: 12px;
+  padding: 11px 12px;
+}
+
+.vehicle-cost-dashboard-root .vc-summary-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vehicle-cost-dashboard-root .vc-summary-label strong {
+  font-size: 0.9rem;
+  color: var(--vc-navy);
+}
+
+.vehicle-cost-dashboard-root .vc-summary-label span {
+  font-size: 0.72rem;
+  color: var(--vc-muted);
+}
+
+.vehicle-cost-dashboard-root .vc-summary-value {
+  font-weight: 700;
+  color: var(--vc-navy);
+}
+
+.vehicle-cost-dashboard-root .vc-table-card {
+  margin-top: 22px;
+}
+
+.vehicle-cost-dashboard-root .vc-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  flex-wrap: wrap;
+}
+
+.vehicle-cost-dashboard-root .vc-table-search {
+  width: min(280px, 100%);
+  background: #fff;
+  border-color: var(--vc-border);
+  color: var(--vc-text);
+}
+
+.vehicle-cost-dashboard-root .vc-table-scroll {
+  overflow-x: auto;
+}
+
+.vehicle-cost-dashboard-root table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+.vehicle-cost-dashboard-root thead th {
+  background: #f8fafc;
+  color: var(--vc-navy);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--vc-border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.vehicle-cost-dashboard-root tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  font-size: 0.84rem;
+  color: var(--vc-text);
+}
+
+.vehicle-cost-dashboard-root tbody tr {
+  transition: background 0.2s ease;
+}
+
+.vehicle-cost-dashboard-root tbody tr:hover {
+  background: rgba(45, 108, 223, 0.02);
+}
+
+.vehicle-cost-dashboard-root .vc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 5px 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.vehicle-cost-dashboard-root .vc-status-open {
+  background: var(--vc-blue-soft);
+  color: var(--vc-blue);
+}
+
+.vehicle-cost-dashboard-root .vc-status-completed {
+  background: var(--vc-success-soft);
+  color: var(--vc-success);
+}
+
+.vehicle-cost-dashboard-root .vc-status-warning {
+  background: var(--vc-warning-soft);
+  color: var(--vc-warning);
+}
+
+.vehicle-cost-dashboard-root .vc-table-total {
+  padding: 16px 20px 20px;
+  color: var(--vc-navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vehicle-cost-dashboard-root .vc-total-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vc-muted);
+}
+
+.vehicle-cost-dashboard-root .vc-total-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.vehicle-cost-dashboard-root .vc-empty-state {
+  text-align: center;
+  padding: 36px 18px;
+  color: var(--vc-muted);
+}
+
+.vehicle-cost-dashboard-root .vc-empty-state h4 {
+  margin: 0 0 8px;
+  color: var(--vc-navy);
+}
+
+@media (max-width: 1100px) {
+  .vehicle-cost-dashboard-root .vc-kpi-grid {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+
+  .vehicle-cost-dashboard-root .vc-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .vehicle-cost-dashboard-root {
+    padding: 14px;
+  }
+
+  .vehicle-cost-dashboard-root .vc-kpi-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+
+  .vehicle-cost-dashboard-root .vc-filter-row,
+  .vehicle-cost-dashboard-root .vc-topbar,
+  .vehicle-cost-dashboard-root .vc-toolbar {
+    align-items: stretch;
+  }
+
+  .vehicle-cost-dashboard-root .vc-action-buttons {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
